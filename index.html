@@ -1,173 +1,147 @@
 <!doctype html>
-<html lang="zh-CN" data-theme="system">
+<html data-theme="system" lang="zh-CN">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="color-scheme" content="dark light" />
-    <meta name="referrer" content="no-referrer" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="dark light" name="color-scheme" />
+    <meta content="no-referrer" name="referrer" />
     <meta
-      http-equiv="Content-Security-Policy"
       content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'"
+      http-equiv="Content-Security-Policy"
     />
-    <meta name="theme-color" content="#0D1114" />
+    <meta content="#0D1114" name="theme-color" />
     <meta
-      name="description"
       content="映川 YingChuan，多端视频客户端。在手机、电脑与 Android TV 上浏览、搜索、播放、追剧与离线下载。深墨双青，自在观影。"
+      name="description"
     />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="映川 · 让故事，自在流淌" />
+    <meta content="website" property="og:type" />
+    <meta content="映川 · 让故事，自在流淌" property="og:title" />
     <meta
-      property="og:description"
       content="从掌心到大屏，找到想看的，接着喜欢的。下载映川 Windows 与 Android 客户端。"
+      property="og:description"
     />
-    <meta property="og:url" content="https://yingchuan-media.github.io/" />
+    <meta content="https://yingchuan-media.github.io/" property="og:url" />
     <meta
-      property="og:image"
       content="https://yingchuan-media.github.io/assets/app_icon.png"
+      property="og:image"
     />
-    <link rel="canonical" href="https://yingchuan-media.github.io/" />
-    <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml" />
+    <link href="https://yingchuan-media.github.io/" rel="canonical" />
+    <link href="assets/app-icon.svg" rel="icon" type="image/svg+xml" />
     <link
-      rel="icon"
       href="assets/favicon-32.png"
+      rel="icon"
       sizes="32x32"
       type="image/png"
     />
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+    <link href="assets/apple-touch-icon.png" rel="apple-touch-icon" />
     <link
-      rel="preload"
-      href="assets/yingchuan-sans.woff2"
       as="font"
+      crossorigin=""
+      href="assets/yingchuan-sans.woff2"
+      rel="preload"
       type="font/woff2"
-      crossorigin
     />
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="motion.css" />
+    <link href="styles.css" rel="stylesheet" />
+    <link href="motion.css" rel="stylesheet" />
     <script src="theme.js"></script>
-    <script src="site.js" defer></script>
-    <script src="motion.js" defer></script>
-    <script src="startup-timing.js" defer></script>
-    <script src="startup.js" defer></script>
-    <title>映川 · 让故事，自在流淌</title>
+    <script defer="" src="site.js"></script>
+    <script defer="" src="motion.js"></script>
+    <script defer="" src="startup-timing.js"></script>
+    <script defer="" src="startup.js"></script>
+    <title>映川 / 让故事，自在流淌</title>
   </head>
   <body>
     <a class="skip-link" href="#main">跳到正文</a>
     <div
+      aria-label="映川开屏动画"
+      aria-modal="true"
       class="startup"
+      hidden=""
       id="startup"
       role="dialog"
-      aria-modal="true"
-      aria-label="映川开屏动画"
-      hidden
     >
       <canvas aria-hidden="true"></canvas>
-      <button class="startup-skip" type="button">
-        跳过动画 <span aria-hidden="true">↗</span>
-      </button>
+      <button class="startup-skip" type="button">跳过动画</button>
     </div>
     <div id="website-shell">
       <header class="header">
         <div class="header-inner wrap">
-          <a class="wordmark" href="#" aria-label="映川首页"
-            ><img src="assets/mark.svg" width="32" height="32" alt="" /><span
+          <a aria-label="映川首页" class="wordmark" href="#main"
+            ><img alt="" height="32" src="assets/mark.svg" width="32" /><span
               >映川</span
-            ><span class="wordmark-en">YINGCHUAN</span></a
+            ><span class="wordmark-en">YingChuan</span></a
           >
           <nav aria-label="主导航">
             <a href="#experience">体验</a><a href="#features">功能</a
             ><a href="#faq">常见问题</a>
           </nav>
           <a class="button small" href="#download"
-            >下载映川 <span aria-hidden="true">↗</span></a
-          >
+            >下载映川 <span aria-hidden="true"></span
+          ></a>
         </div>
       </header>
       <main id="main">
-        <section class="hero wrap" aria-labelledby="hero-title">
+        <section aria-labelledby="hero-title" class="hero wrap">
           <div class="hero-copy">
-            <p class="eyebrow">
-              <span class="status-dot"></span> 影像相逢，故事成川
-            </p>
-            <h1 id="hero-title">让故事，<br /><span>自在流淌。</span></h1>
+            <h1 id="hero-title">让故事，<br />自在流淌。</h1>
             <p class="hero-description">
-              找到想看的，接着喜欢的。<br />从掌心到大屏，映川陪你看下去。
+              从掌心到大屏，找到想看的，接着喜欢的。
             </p>
             <div class="hero-actions">
-              <a class="button" href="#download"
-                >获取映川
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M12 4v12m-5-5 5 5 5-5M5 20h14" /></svg></a
-              ><a class="text-link" href="#experience"
-                >探索观看体验 <span aria-hidden="true">↓</span></a
+              <a
+                class="button"
+                href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/yingchuan-0.1.3-windows-x64.exe"
+                >下载 Windows</a
+              >
+              <a
+                class="text-link"
+                href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/yingchuan-0.1.3-arm64-v8a.apk"
+                >下载 Android</a
               >
             </div>
-            <p class="platform-line">
-              Windows <span>／</span> Android <span>／</span> Android TV
-            </p>
+            <a class="hero-release" href="#download"
+              >0.1.3 预发布版，查看安装要求</a
+            >
           </div>
-          <div class="hero-art" aria-hidden="true">
-            <div class="river-orbit orbit-one"></div>
-            <div class="river-orbit orbit-two"></div>
-            <div class="river-orbit orbit-three"></div>
+          <div class="hero-art">
             <img
+              alt="映川澄青川流标识"
               class="hero-mark"
+              fetchpriority="high"
+              height="400"
               src="assets/mark.svg"
               width="400"
-              height="400"
-              alt=""
-            /><span class="art-caption">YINGCHUAN <i></i> STORIES IN FLOW</span>
+            />
+            <button class="replay-startup" data-replay-startup="" type="button">
+              重播开屏
+            </button>
           </div>
-          <button
-            class="replay-startup hero-replay"
-            type="button"
-            data-replay-startup
-          >
-            ↻ 重播开屏
-          </button>
-          <a class="hero-footnote" href="#experience"
-            ><span>向下，开启你的观影时间</span
-            ><span aria-hidden="true">↓</span></a
-          >
-        </section>
 
+          <div class="hero-bottom">
+            <a class="text-link" href="#experience"
+              >探索观看体验 <span aria-hidden="true"></span
+            ></a>
+            <p>Windows / Android / Android TV</p>
+          </div>
+        </section>
         <section
+          aria-labelledby="experience-title"
           class="experience wrap section"
           id="experience"
-          aria-labelledby="experience-title"
         >
           <div class="section-heading">
             <div>
-              <p class="eyebrow">一份熟悉，多种尺度</p>
               <h2 id="experience-title">小屏随行，大屏尽兴。</h2>
             </div>
             <p>
-              同一套映川设计，适应不同屏幕。<br />浏览、选集、播放，顺着你的习惯来。
+              同一套映川设计，适应不同屏幕。浏览、选集、播放，顺着你的习惯来。
             </p>
           </div>
-          <div class="showcase-track">
+          <figure class="showcase-track">
             <div class="showcase-scene">
               <div class="showcase">
-                <div class="desktop-demo" aria-hidden="true">
-                  <div class="window-bar">
-                    <span class="demo-brand"
-                      ><img
-                        src="assets/mark.svg"
-                        width="22"
-                        height="22"
-                        alt=""
-                      />映川</span
-                    ><span class="window-search"
-                      >搜索你想看的故事 <span>⌕</span></span
-                    ><span class="window-controls">−　□　×</span>
-                  </div>
+                <div aria-hidden="true" class="desktop-demo">
                   <div class="demo-body">
-                    <aside class="demo-sidebar">
-                      <span class="demo-nav active">◈ <b>发现</b></span
-                      ><span class="demo-nav">♡ <b>追剧</b></span
-                      ><span class="demo-nav">◷ <b>历史</b></span
-                      ><span class="demo-nav">↓ <b>下载</b></span
-                      ><span class="demo-nav bottom">⚙ <b>设置</b></span>
-                    </aside>
                     <div class="demo-content">
                       <div class="demo-topline">
                         <span>发现好故事</span
@@ -176,16 +150,16 @@
                         >
                       </div>
                       <div class="demo-banner">
-                        <img src="scene.svg" width="1000" height="500" alt="" />
+                        <img alt="" height="500" src="scene.svg" width="1000" />
                         <div class="banner-copy">
-                          <span>映川 · 原创合成画面</span
+                          <span>映川 / 原创合成画面</span
                           ><strong>山海之间</strong>
                           <p>慢一点，让风景走进故事。</p>
                           <span class="demo-play">▷　开始观看</span>
                         </div>
                       </div>
                       <div class="demo-row-title">
-                        留一点时间，给喜欢的故事 <span>查看全部 →</span>
+                        留一点时间，给喜欢的故事 <span>查看全部 </span>
                       </div>
                       <div class="poster-row">
                         <div>
@@ -214,25 +188,22 @@
                     </div>
                   </div>
                 </div>
-                <div class="phone-demo" aria-hidden="true">
-                  <div class="phone-camera"></div>
-                  <div class="phone-status">9:41 <span>▮▮　▰</span></div>
+                <div aria-hidden="true" class="phone-demo">
                   <div class="phone-heading">
                     <img
+                      alt=""
+                      height="25"
                       src="assets/mark.svg"
                       width="25"
-                      height="25"
-                      alt=""
                     />映川
-                    <span>⌕</span>
                   </div>
                   <div class="phone-tabs"><b>推荐</b>　电影　剧集　动漫</div>
                   <div class="phone-landscape">
                     <img
+                      alt=""
+                      height="500"
                       src="scene.svg"
                       width="1000"
-                      height="500"
-                      alt=""
                     /><strong>山海之间</strong>
                   </div>
                   <p class="phone-section">你的下一段故事</p>
@@ -240,45 +211,35 @@
                     <div class="poster p-one"><span>晴川</span></div>
                     <div class="poster p-two"><span>远山来信</span></div>
                   </div>
-                  <div class="phone-bottom">
-                    <span class="selected">◈<small>发现</small></span
-                    ><span>♡<small>追剧</small></span
-                    ><span>◷<small>历史</small></span
-                    ><span>⚙<small>设置</small></span>
-                  </div>
                 </div>
               </div>
-              <div class="journey-labels" aria-hidden="true">
+              <div aria-hidden="true" class="journey-labels">
                 <div class="journey-beats">
-                  <span>01 <b>宽屏舒展，让故事占满视野。</b></span
-                  ><span>02 <b>移步掌心，喜欢的随身带走。</b></span
-                  ><span>03 <b>一份熟悉，让观看自在流淌。</b></span>
+                  <span><b>宽屏舒展，让故事占满视野。</b></span
+                  ><span><b>移步掌心，喜欢的随身带走。</b></span
+                  ><span><b>一份熟悉，让观看自在流淌。</b></span>
                 </div>
                 <div class="journey-meter"><i></i></div>
               </div>
-              <p class="demo-caption">
-                界面示意 ·
-                使用原创合成画面与虚构片名，不代表实际片库或可播放内容。
-              </p>
+              <figcaption class="demo-caption">
+                交互示意使用原创合成画面与虚构片名，不代表实际片库或可播放内容。
+              </figcaption>
             </div>
-          </div>
+          </figure>
           <div class="platforms">
             <article>
-              <span class="platform-number">01</span>
               <div>
                 <h3>电脑，舒展地看</h3>
                 <p>宽屏导航、键盘操作与 Windows 小窗，让观看融入桌面。</p>
               </div>
             </article>
             <article>
-              <span class="platform-number">02</span>
               <div>
                 <h3>手机，随时接着看</h3>
                 <p>竖屏底部导航，追剧与历史随手可达，下载入口收进设置。</p>
               </div>
             </article>
             <article>
-              <span class="platform-number">03</span>
               <div>
                 <h3>电视，坐下来慢慢看</h3>
                 <p>Android TV 使用对应架构 APK，提供大屏布局与遥控焦点。</p>
@@ -286,105 +247,78 @@
             </article>
           </div>
         </section>
-
         <section
+          aria-labelledby="features-title"
           class="features section"
           id="features"
-          aria-labelledby="features-title"
         >
           <div class="wrap">
             <div class="section-heading">
               <div>
-                <p class="eyebrow">把观看的每一步，照顾好</p>
-                <h2 id="features-title">从发现，到舍不得暂停。</h2>
+                <h2 id="features-title">每一步观看，<br />都照顾好。</h2>
               </div>
-              <p>让工具安静一点，<br />把注意力留给故事本身。</p>
+              <p>让工具安静一点，把注意力留给故事本身。</p>
             </div>
             <div class="feature-grid">
               <article class="feature feature-wide">
-                <div>
-                  <span class="feature-index">01 / 发现</span>
-                  <h3>想看的，慢慢找。<br />喜欢的，好好收。</h3>
-                  <p>
-                    按站源浏览与搜索，用追剧状态整理片单，<br
-                      class="desktop-break"
-                    />从观看历史回到上次的故事。
-                  </p>
-                </div>
-                <div class="collection-art" aria-hidden="true">
-                  <div class="collection-title">我的追剧 <span>♡</span></div>
+                <h3>想看的，慢慢找。<br />喜欢的，好好收。</h3>
+                <p>
+                  按站源浏览与搜索，用追剧状态整理片单，从观看历史回到上次的故事。
+                </p>
+
+                <div aria-hidden="true" class="collection-art">
+                  <div class="collection-title">我的追剧</div>
                   <div class="collection-row">
                     <i class="mini-poster p-one"></i>
-                    <div><b>晴川</b><span>在看 · 把故事继续</span></div>
+                    <div><b>晴川</b><span>在看 / 把故事继续</span></div>
                     <em>在看</em>
                   </div>
                   <div class="collection-row">
                     <i class="mini-poster p-two"></i>
-                    <div><b>远山来信</b><span>想看 · 留给下个周末</span></div>
+                    <div><b>远山来信</b><span>想看 / 留给下个周末</span></div>
                     <em>想看</em>
                   </div>
                   <div class="collection-row">
                     <i class="mini-poster p-four"></i>
-                    <div><b>听见风</b><span>已看 · 值得再回味</span></div>
+                    <div><b>听见风</b><span>已看 / 值得再回味</span></div>
                     <em>已看</em>
                   </div>
                 </div>
               </article>
               <article class="feature">
-                <span class="feature-index">02 / 播放</span>
                 <h3>按你的节奏，<br />进入故事。</h3>
-                <p>
-                  选集、续播、倍速、字幕与弹幕。<br />实际画质和线路，由你选择。
-                </p>
-                <div class="playback-art" aria-hidden="true">
+                <p>选集、续播、倍速、字幕与弹幕。实际画质和线路，由你选择。</p>
+                <div aria-hidden="true" class="playback-art">
                   <span>12:48</span>
                   <div><i></i></div>
                   <span>24:00</span><b>1.25×</b>
                 </div>
               </article>
               <article class="feature">
-                <span class="feature-index">03 / 离线</span>
                 <h3>提前准备好，<br />把故事带在身边。</h3>
                 <p>
-                  分集下载、暂停续传、失败重试。<br />在支持下载的内容中，留住观看时间。
+                  分集下载、暂停续传、失败重试。在支持下载的内容中，留住观看时间。
                 </p>
-                <div class="download-art" aria-hidden="true">
-                  <span class="download-icon">↓</span>
+                <div aria-hidden="true" class="download-art">
                   <div>
-                    <b>山海之间 · 第 03 集</b><span>已下载，可离线观看</span>
+                    <b>山海之间 / 第 03 集</b><span>已下载，可离线观看</span>
                   </div>
-                  <span class="done">✓</span>
                 </div>
               </article>
               <article class="feature">
-                <span class="feature-index">04 / 画面</span>
                 <h3>给线条，<br />多一点细腻。</h3>
-                <p>
-                  受支持的 mpv 后端提供 Anime4K，<br />可选择着色器并左右对比。
-                </p>
+                <p>受支持的 mpv 后端提供 Anime4K，可选择着色器并左右对比。</p>
                 <p class="feature-note">效果与性能取决于设备、后端和片源。</p>
-                <div class="enhance-art" aria-hidden="true">
-                  <span>Anime4K</span><i>画面增强</i><b>↗</b>
+                <div aria-hidden="true" class="enhance-art">
+                  <span>Anime4K</span><i>画面增强</i>
                 </div>
               </article>
               <article class="feature">
-                <span class="feature-index">05 / 局域网</span>
                 <h3>换一块屏幕，<br />多一种看法。</h3>
-                <p>
-                  客户端开启局域网页面，其他设备<br />通过浏览器配对后访问。
-                </p>
+                <p>客户端开启局域网页面，其他设备通过浏览器配对后访问。</p>
                 <p class="feature-note">
                   主机需保持运行，格式支持依浏览器而定。
                 </p>
-                <div class="lan-art" aria-hidden="true">
-                  <span>▱</span><i></i
-                  ><img
-                    src="assets/mark.svg"
-                    width="40"
-                    height="40"
-                    alt=""
-                  /><i></i><span>▯</span>
-                </div>
               </article>
             </div>
             <p class="capability-note">
@@ -392,111 +326,74 @@
             </p>
           </div>
         </section>
-
         <section
+          aria-labelledby="download-title"
           class="download-section wrap section"
           id="download"
-          aria-labelledby="download-title"
         >
           <div class="section-heading">
             <div>
-              <p class="eyebrow">下一段故事，从这里开始</p>
               <h2 id="download-title">选好屏幕，下载映川。</h2>
             </div>
             <a
               class="text-link"
               href="https://github.com/yingchuan-media/yingchuan-releases/releases"
-              >查看全部发布 <span aria-hidden="true">↗</span></a
-            >
+              >查看全部发布 <span aria-hidden="true"></span
+            ></a>
           </div>
           <div class="release-status">
-            <span class="status-dot"></span><strong>0.1.3 预发布版</strong
-            ><span>本地构建 · Android 固定发布签名</span
+            <strong>0.1.3 预发布版</strong
+            ><span>本地构建 / Android 固定发布签名</span
             ><a
               href="https://github.com/yingchuan-media/yingchuan-releases/releases/tag/app-v0.1.3-local-3b1d9b0e2e09"
-              >发布说明 ↗</a
-            >
+              >发布说明
+            </a>
           </div>
           <div class="download-grid">
             <article class="download-card">
-              <svg class="platform-icon" viewBox="0 0 32 32" aria-hidden="true">
-                <path
-                  d="M3 5l11-1.5V15H3zm13-2L29 1v14H16zM3 17h11v11.5L3 27zm13 0h13v14l-13-2z"
-                />
-              </svg>
               <h3>Windows</h3>
               <p>在大一点的屏幕，<br />留一整段时间给故事。</p>
-              <span class="system-label">x64 · 便携 EXE / 完整 ZIP</span
+              <span class="system-label">x64 / 便携 EXE / 完整 ZIP</span
               ><a
                 class="button"
                 href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/yingchuan-0.1.3-windows-x64.exe"
-                >下载 Windows EXE <span aria-hidden="true">↓</span></a
+                >下载 Windows EXE </a
               ><a
                 class="secondary-download"
                 href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/yingchuan-0.1.3-windows-x64.zip"
-                >下载完整 ZIP ↗</a
-              >
+                >下载完整 ZIP
+              </a>
               <p class="download-help">ZIP 请完整解压，保留 DLL 与 data。</p>
             </article>
             <article class="download-card">
-              <svg
-                class="platform-icon android-icon"
-                viewBox="0 0 32 32"
-                aria-hidden="true"
-              >
-                <path
-                  d="M5 15h22v10a3 3 0 0 1-3 3H8a3 3 0 0 1-3-3zm0-2a11 11 0 0 1 22 0z"
-                />
-                <path
-                  class="icon-stroke"
-                  d="m9 5-3-4m17 4 3-4M2 16v9m28-9v9M11 27v4m10-4v4"
-                />
-                <circle class="android-eye" cx="11" cy="9" r="1" />
-                <circle class="android-eye" cx="21" cy="9" r="1" />
-              </svg>
               <h3>Android</h3>
               <p>装进口袋的观影时间，<br />随时打开，随心继续。</p>
-              <span class="system-label">Android 8.0+ · 默认 ARM64</span
+              <span class="system-label">Android 8.0+ / 默认 ARM64</span
               ><a
                 class="button"
                 href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/yingchuan-0.1.3-arm64-v8a.apk"
-                >下载 Android APK <span aria-hidden="true">↓</span></a
-              >
+                >下载 Android APK <span aria-hidden="true"></span
+              ></a>
               <div class="architecture-links">
                 <a
                   href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/yingchuan-0.1.3-armeabi-v7a.apk"
-                  >ARMv7 ↗</a
+                  >ARMv7 </a
                 ><a
                   href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/yingchuan-0.1.3-x86_64.apk"
-                  >x86_64 ↗</a
-                >
+                  >x86_64
+                </a>
               </div>
               <p class="download-help">其他签名的旧测试包不能直接覆盖升级。</p>
             </article>
             <article class="download-card tv-card">
-              <svg
-                class="platform-icon tv-icon"
-                viewBox="0 0 32 32"
-                aria-hidden="true"
-              >
-                <rect
-                  class="icon-stroke"
-                  x="2"
-                  y="4"
-                  width="28"
-                  height="20"
-                  rx="3"
-                />
-                <path class="icon-stroke" d="M11 29h10m-5-5v5" />
-              </svg>
               <h3>Android TV</h3>
               <p>把灯光调暗，<br />让客厅成为观影空间。</p>
-              <span class="system-label">使用 Android APK · 按设备架构选择</span
+              <span class="system-label">使用 Android APK / 按设备架构选择</span
               ><a
                 class="button outline"
                 href="https://github.com/yingchuan-media/yingchuan-releases#下载"
-                >选择 TV 安装包 <span aria-hidden="true">↗</span></a
-              ><span class="tv-description">大屏布局 · 遥控焦点导航</span>
+                >选择 TV 安装包 </a
+              ><span class="tv-description">大屏布局 / 遥控焦点导航</span>
               <p class="download-help">安装与播放表现仍需对应真机验证。</p>
             </article>
           </div>
@@ -505,29 +402,27 @@
             <div>
               <a
                 href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/SHA256SUMS.txt"
-                >SHA-256 校验 ↗</a
+                >SHA-256 校验 </a
               ><a
                 href="https://github.com/yingchuan-media/yingchuan-releases/releases/download/app-v0.1.3-local-3b1d9b0e2e09/BUILD_METADATA.json"
-                >构建信息 ↗</a
-              >
+                >构建信息
+              </a>
             </div>
           </div>
         </section>
-
         <section
+          aria-labelledby="faq-title"
           class="faq-section wrap section"
           id="faq"
-          aria-labelledby="faq-title"
         >
           <div class="faq-intro">
-            <p class="eyebrow">开始之前</p>
-            <h2 id="faq-title">你可能<br />还想知道。</h2>
+            <h2 id="faq-title">开始之前，你可能还想知道。</h2>
             <p>没找到答案？<br />带上版本与复现步骤，告诉我们。</p>
             <a
               class="text-link"
               href="https://github.com/yingchuan-media/yingchuan-releases/issues"
-              >反馈问题 <span aria-hidden="true">↗</span></a
-            >
+              >反馈问题 <span aria-hidden="true"></span
+            ></a>
           </div>
           <div class="faq-list">
             <details>
@@ -619,19 +514,19 @@
           </div>
         </section>
         <section class="closing wrap">
-          <img src="assets/mark.svg" width="56" height="56" alt="" />
-          <h2>故事未完，映川相伴。</h2>
+          <img alt="" height="56" src="assets/mark.svg" width="56" />
+          <h2>下一段故事，从映川开始。</h2>
           <a class="button" href="#download"
-            >开启下一段故事 <span aria-hidden="true">↗</span></a
-          >
+            >开启下一段故事 <span aria-hidden="true"></span
+          ></a>
         </section>
       </main>
       <footer class="footer wrap">
         <div class="footer-top">
-          <a class="wordmark" href="#" aria-label="返回映川首页"
-            ><img src="assets/mark.svg" width="32" height="32" alt="" /><span
+          <a aria-label="返回映川首页" class="wordmark" href="#main"
+            ><img alt="" height="32" src="assets/mark.svg" width="32" /><span
               >映川</span
-            ><span class="wordmark-en">YINGCHUAN</span></a
+            ><span class="wordmark-en">YingChuan</span></a
           >
           <div class="footer-links">
             <a href="https://github.com/yingchuan-media/yingchuan-releases"
@@ -645,7 +540,7 @@
           </div>
           <label class="theme-label"
             >外观
-            <select id="theme-select" aria-label="网站外观主题">
+            <select aria-label="网站外观主题" id="theme-select">
               <option value="system">跟随系统</option>
               <option value="light">浅色</option>
               <option value="dark">深色</option>

@@ -1,7 +1,7 @@
 (() => {
   const root = document.documentElement;
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
-  const compact = matchMedia("(max-width: 600px), (max-height: 820px)");
+  const compact = matchMedia("(max-width: 640px), (max-height: 820px)");
   const hero = document.querySelector(".hero");
   const track = document.querySelector(".showcase-track");
   const scene = document.querySelector(".showcase-scene");
@@ -21,6 +21,7 @@
     const heroRect = hero.getBoundingClientRect();
     const trackRect = track.getBoundingClientRect();
     const sceneHeight = scene.offsetHeight;
+    const pinnedTop = parseFloat(getComputedStyle(scene).top) || 104;
     const rectangles = reveal.map((element) => ({
       top:
         element.getBoundingClientRect().top -
@@ -30,7 +31,8 @@
     const desktop = !compact.matches;
     const progress = desktop
       ? clamp(
-          (104 - trackRect.top) / Math.max(1, track.offsetHeight - sceneHeight),
+          (pinnedTop - trackRect.top) /
+            Math.max(1, track.offsetHeight - sceneHeight),
         )
       : clamp(
           (height * 0.75 - trackRect.top) /

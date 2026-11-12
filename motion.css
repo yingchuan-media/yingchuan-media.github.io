@@ -1,15 +1,4 @@
-.header {
-  position: sticky;
-  top: 0;
-  background: var(--canvas);
-  z-index: 20;
-}
-.showcase-track {
-  position: relative;
-}
-.showcase {
-  overflow: clip;
-}
+.showcase-track,
 .showcase-scene {
   position: relative;
 }
@@ -20,7 +9,7 @@
   display: none;
 }
 .startup-active body {
-  background: #0d1114;
+  background: var(--mock-bg);
 }
 .startup {
   position: fixed;
@@ -38,54 +27,51 @@
   position: absolute;
   right: 32px;
   top: 24px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 16px;
+  gap: var(--space-md);
   min-height: 48px;
-  padding: 10px 20px;
-  border: 1px solid #536b64;
-  border-radius: 16px;
-  background: #151b20;
-  color: #f0f6f3;
+  padding: var(--space-sm) var(--space-lg);
+  border: 1px solid var(--mock-muted);
+  border-radius: 8px;
+  background: var(--mock-card);
+  color: var(--mock-ink);
   font: inherit;
   font-size: 14px;
   cursor: pointer;
 }
-.startup-skip:focus-visible,
-.replay-startup:focus-visible {
-  outline: 3px solid var(--action);
-  outline-offset: 5px;
+.startup-skip:focus-visible {
+  outline-color: var(--brand-light);
+}
+.startup-skip:hover {
+  border-color: var(--brand-light);
 }
 .replay-startup {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: var(--space-sm);
   min-height: 48px;
-  padding: 8px 0;
-  background: none;
-  border: 0;
+  padding: var(--space-xs) var(--space-md);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 8px;
   color: var(--muted);
   font: inherit;
-  font-size: 12px;
+  font-size: 14px;
   cursor: pointer;
+  transition:
+    color var(--dur-short) var(--ease-out),
+    border-color var(--dur-short) var(--ease-out);
 }
 .replay-startup:hover {
-  color: var(--action);
+  color: var(--ink);
+  border-color: var(--muted);
 }
 .replay-startup:disabled {
-  opacity: 0.6;
-  cursor: default;
-}
-.hero-replay {
-  position: absolute;
-  right: 0;
-  bottom: 24px;
-  z-index: 2;
-  background: var(--canvas);
-  padding-left: 24px;
-}
-.hero-footnote > span:last-child {
-  margin-right: 142px;
+  background: var(--soft);
+  color: var(--muted);
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 .motion-ready .hero-copy {
   transform: translate3d(0, var(--hero-shift, 0px), 0);
@@ -117,48 +103,42 @@
   transform-origin: 50% 100%;
 }
 .motion-pinned .showcase-track {
-  height: calc(1250px + 56vw);
-  max-height: 2050px;
+  height: calc(960px + 56vw);
+  max-height: 1800px;
 }
 .motion-pinned .showcase-scene {
   position: sticky;
-  top: 104px;
+  top: calc(var(--nav-height) + 16px);
 }
 .motion-pinned .showcase {
-  padding-top: 16px;
-  padding-bottom: 24px;
-  width: min(100%, calc((100svh - 250px) * 1.9));
+  width: min(100%, calc((100svh - 320px) * 1.4));
   margin-inline: auto;
 }
 .motion-pinned .journey-labels {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 32px;
-  max-width: 100%;
-  margin-top: 16px;
+  gap: var(--space-xl);
+  margin-top: var(--space-lg);
   min-height: 48px;
 }
 .journey-beats {
   height: 32px;
   overflow: clip;
   line-height: 32px;
-  font-size: 12px;
-  color: var(--action);
+  font-size: 14px;
+  color: var(--ink);
 }
 .journey-beats > span {
   display: block;
   transform: translateY(var(--beat-y, 0));
-  transition: transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 420ms var(--ease-out);
 }
 .journey-beats b {
-  color: var(--ink);
-  font-size: 14px;
-  margin-left: 20px;
-  font-weight: 500;
+  font-weight: 400;
 }
 .journey-meter {
-  width: 120px;
+  width: 160px;
   height: 2px;
   background: var(--border);
   flex-shrink: 0;
@@ -171,42 +151,22 @@
   transform: scaleX(var(--journey-progress, 0));
   transform-origin: left;
 }
-.motion-pinned .demo-caption {
-  margin-top: 12px;
-}
-@media (max-width: 850px) {
+@media (max-width: 1000px) {
   .motion-pinned .showcase-track {
-    height: 1650px;
-  }
-  .motion-pinned .showcase {
-    width: 100%;
-  }
-  .journey-beats b {
-    font-size: 12px;
+    height: 1450px;
   }
   .journey-meter {
     width: 80px;
   }
+  .journey-beats {
+    font-size: 12px;
+  }
 }
-@media (max-width: 600px) {
-  .hero-replay {
-    bottom: 16px;
-    padding-left: 12px;
-  }
-  .hero-footnote > span:last-child {
-    display: none;
-  }
-  .hero-footnote {
-    padding-right: 132px;
-  }
+@media (max-width: 640px) {
   .startup-skip {
     top: 16px;
     right: 20px;
     font-size: 12px;
-  }
-  .motion-ready .phone-demo {
-    transform: translate3d(0, var(--phone-y, 0px), 0)
-      scale(var(--phone-scale, 1));
   }
 }
 @media (prefers-reduced-motion: reduce) {
