@@ -6,7 +6,11 @@
   const skip = overlay.querySelector("button");
   const reduced = matchMedia("(prefers-reduced-motion: reduce)");
   const timing = window.yingchuanStartupTiming;
-  if (!context || !timing) return;
+  const opening = window.yingchuanOpening;
+  if (!context || !timing) {
+    opening?.release();
+    return;
+  }
   const TAU = Math.PI * 2;
   const colors = {
     highlight: "#42C7B4",
@@ -684,6 +688,7 @@
     shell.style.opacity = c.exposure;
   }
   function finish() {
+    opening?.release();
     if (!active) return;
     active = false;
     cancelAnimationFrame(frame);
@@ -721,8 +726,9 @@
       finish();
     }
   }
-  function play() {
+  function play(automatic = false) {
     if (active || reduced.matches) return;
+    if (automatic && !opening?.pending) return;
     previousFocus = document.activeElement;
     saved.overflow = document.body.style.overflow;
     active = true;
@@ -734,11 +740,16 @@
     shell.style.height = `${innerHeight}px`;
     shell.style.overflow = "hidden";
     shell.style.willChange = "transform, opacity";
-    dimensions();
-    render(0);
-    skip.focus({ preventScroll: true });
-    start = performance.now();
-    frame = requestAnimationFrame(tick);
+    try {
+      dimensions();
+      render(0);
+      if (automatic) opening.claim();
+      skip.focus({ preventScroll: true });
+      start = performance.now();
+      frame = requestAnimationFrame(tick);
+    } catch {
+      finish();
+    }
   }
   skip.addEventListener("click", finish);
   overlay.addEventListener("keydown", (event) => {
@@ -751,7 +762,9 @@
     }
   });
   const replayButtons = [...document.querySelectorAll("[data-replay-startup]")];
-  replayButtons.forEach((button) => button.addEventListener("click", play));
+  replayButtons.forEach((button) =>
+    button.addEventListener("click", () => play()),
+  );
   function updateMotionPreference() {
     if (reduced.matches) finish();
     replayButtons.forEach((button) => {
@@ -779,19 +792,14 @@
       frame = requestAnimationFrame(tick);
     }
   });
-  let seen = false;
-  try {
-    seen = sessionStorage.getItem("yingchuan-opening") === "seen";
-    sessionStorage.setItem("yingchuan-opening", "seen");
-  } catch {}
-  if (!seen && !location.hash) {
+  if (opening?.pending) {
     if (document.hidden) {
       document.addEventListener("visibilitychange", function waitVisible() {
         if (!document.hidden) {
           document.removeEventListener("visibilitychange", waitVisible);
-          play();
+          play(true);
         }
       });
-    } else play();
+    } else play(true);
   }
 })();

@@ -41,13 +41,13 @@
       rel="preload"
       type="font/woff2"
     />
-    <link href="styles.css" rel="stylesheet" />
+    <link href="styles.css?v=opening-2" rel="stylesheet" />
     <link href="motion.css" rel="stylesheet" />
-    <script src="theme.js"></script>
+    <script src="theme.js?v=opening-2"></script>
     <script defer="" src="site.js"></script>
     <script defer="" src="motion.js"></script>
     <script defer="" src="startup-timing.js"></script>
-    <script defer="" src="startup.js"></script>
+    <script defer="" src="startup.js?v=opening-2"></script>
     <title>映川 / 让故事，自在流淌</title>
   </head>
   <body>
@@ -61,6 +61,7 @@
       role="dialog"
     >
       <canvas aria-hidden="true"></canvas>
+      <p class="startup-wait" role="status">正在准备开屏…</p>
       <button class="startup-skip" type="button">跳过动画</button>
     </div>
     <div id="website-shell">
@@ -112,7 +113,13 @@
               src="assets/mark.svg"
               width="400"
             />
-            <button class="replay-startup" data-replay-startup="" type="button">
+            <button
+              class="replay-startup"
+              data-replay-startup=""
+              type="button"
+              disabled
+              title="开屏暂未就绪"
+            >
               重播开屏
             </button>
           </div>

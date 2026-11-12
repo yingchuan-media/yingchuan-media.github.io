@@ -93,6 +93,27 @@ body {
   font-synthesis: none;
   -webkit-font-smoothing: antialiased;
 }
+.startup-pending body {
+  background: var(--mock-bg);
+  overflow: clip;
+}
+.startup-pending #website-shell {
+  visibility: hidden;
+}
+.startup-pending .startup[hidden] {
+  display: block;
+}
+.startup-wait {
+  display: none;
+}
+.startup-pending .startup-wait {
+  display: block;
+  position: absolute;
+  inset: 50% 0 auto;
+  text-align: center;
+  color: var(--mock-muted);
+  font-size: 14px;
+}
 button,
 select {
   font: inherit;
