@@ -823,16 +823,21 @@ a:hover {
 }
 .download-meta {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: var(--space-lg);
   align-items: center;
   padding-top: var(--space-lg);
   font-size: 13px;
 }
+.download-meta > [data-release-status] {
+  flex-basis: 100%;
+}
 .download-meta > div {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-lg);
-  flex-shrink: 0;
+  flex-shrink: 1;
 }
 .faq-section {
   display: grid;
