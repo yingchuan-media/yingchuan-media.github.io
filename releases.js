@@ -53,8 +53,8 @@
     }
     const updates = [];
     for (const link of document.querySelectorAll("[data-release-asset]")) {
-      const name = new URL(link.getAttribute("href")).pathname.split("/").pop()
-        .replace(/^yingchuan-\d+\.\d+\.\d+-/, `yingchuan-${version}-`);
+      const key = link.getAttribute("data-release-asset");
+      const name = key === "SHA256SUMS.txt" || key === "BUILD_METADATA.json" ? key : `yingchuan-${version}-${key}`;
       if (!assets.has(name)) throw new Error("download mapping");
       updates.push([link, assets.get(name)]);
     }
@@ -63,7 +63,7 @@
     for (const label of document.querySelectorAll("[data-release-version]")) label.textContent = version;
     for (const label of document.querySelectorAll("[data-release-status]")) label.textContent = "已读取发布仓库的最新正式版";
   } catch {
-    for (const label of document.querySelectorAll("[data-release-status]")) label.textContent = "未能获取最新发布，继续使用已核验的下载信息";
+    for (const label of document.querySelectorAll("[data-release-status]")) label.textContent = "未能获取最新版本信息，请进入最新发布页选择对应平台";
   } finally {
     clearTimeout(timeout);
   }
